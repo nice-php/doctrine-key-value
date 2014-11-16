@@ -1,5 +1,5 @@
 {
-  "name": "nice-php/doctrine-key-value",
+  "name": "nice/doctrine-key-value",
   "description": "Integrates Doctrine KeyValueStore with Nice PHP framework",
   "license": "MIT",
   "require": {

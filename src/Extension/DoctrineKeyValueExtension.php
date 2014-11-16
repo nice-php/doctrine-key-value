@@ -65,7 +65,7 @@ class DoctrineKeyValueExtension extends Extension
     {
         $container->register('doctrine.key_value.storage', 'Doctrine\KeyValueStore\Storage\DoctrineCacheStorage')
             ->setPublic(false)
-            ->addArgument(new Reference($config['cache_driver']));
+            ->addArgument(new Reference('cache.' . $config['cache_driver']));
     }
 
     /**

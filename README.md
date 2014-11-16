@@ -1,4 +1,4 @@
 doctrine-key-value
 ==================
 
-Integrated Nice with Doctrine KeyValueStore
+Integrates Nice with Doctrine KeyValueStore

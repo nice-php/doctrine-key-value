@@ -93,8 +93,7 @@ class DoctrineKeyValueExtension extends Extension
     private function configureEntityManager(array $config, ContainerBuilder $container)
     {
         $container->register('doctrine.key_value.configuration', 'Doctrine\KeyValueStore\Configuration')
-            ->addMethodCall('setMappingDriverImpl', array(new Reference('doctrine.key_value.metadata.annotation')))
-            ->addMethodCall('setMetadataCache', array(new Reference('cache.default')));
+            ->addMethodCall('setMappingDriverImpl', array(new Reference('doctrine.key_value.metadata.annotation')));
 
         $container->register('doctrine.key_value.entity_manager', 'Doctrine\KeyValueStore\EntityManager')
             ->addArgument(new Reference('doctrine.key_value.storage'))

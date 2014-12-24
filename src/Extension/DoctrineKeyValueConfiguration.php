@@ -26,22 +26,7 @@ class DoctrineKeyValueConfiguration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->arrayNode('key_value')
-                    ->isRequired()
-                    ->children()
-                        ->scalarNode('cache_driver')->defaultValue('default')->end()
-                        ->arrayNode('mapping')
-                            ->isRequired()
-                            ->children()
-                                ->arrayNode('paths')
-                                    ->isRequired()
-                                    ->requiresAtLeastOneElement()
-                                    ->prototype('scalar')->end()
-                                ->end()
-                            ->end()
-                        ->end()
-                    ->end()
-                ->end()
+                ->scalarNode('cache_driver')->defaultValue('default')->end()
             ->end();
 
         return $treeBuilder;

@@ -20,14 +20,7 @@ class DoctrineKeyValueExtensionTest extends \PHPUnit_Framework_TestCase
     public function testConfigure()
     {
         $extension = new DoctrineKeyValueExtension(array(
-            'key_value' => array(
-                'cache_driver' => 'default',
-                'mapping' => array(
-                    'paths' => array(
-                        __DIR__
-                    )
-                )
-            )
+            'cache_driver' => 'default'
         ));
 
         $container = new ContainerBuilder();

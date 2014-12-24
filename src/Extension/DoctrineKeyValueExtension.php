@@ -29,7 +29,7 @@ class DoctrineKeyValueExtension extends Extension
      * @param array            $config    An array of configuration values
      * @param ContainerBuilder $container A ContainerBuilder instance
      *
-     * @return DoctrineOrmConfiguration
+     * @return DoctrineKeyValueConfiguration
      */
     public function getConfiguration(array $config, ContainerBuilder $container)
     {
@@ -50,9 +50,9 @@ class DoctrineKeyValueExtension extends Extension
         $configuration = $this->getConfiguration($configs, $container);
         $config = $this->processConfiguration($configuration, $configs);
 
-        $this->configureStorage($config['key_value'], $container);
-        $this->configureMetadataDriver($config['key_value'], $container);
-        $this->configureEntityManager($config['key_value'], $container);
+        $this->configureStorage($config, $container);
+        $this->configureMetadataDriver($config, $container);
+        $this->configureEntityManager($config, $container);
     }
 
     /**

@@ -14,28 +14,14 @@ use Symfony\Component\Config\Definition\Processor;
 
 class DoctrineKeyValueConfigurationTest extends \PHPUnit_Framework_TestCase
 {
-    public function testRequiresMappingElement()
-    {
-        $this->setExpectedException(
-            'Symfony\Component\Config\Definition\Exception\InvalidConfigurationException',
-            'The child node "key_value" at path "doctrine" must be configured.'
-        );
-
-        $processor = new Processor();
-        $config = $processor->processConfiguration(new DoctrineKeyValueConfiguration(), array(array()));
-    }
-
     public function testDefaultKeyValueConfig()
     {
         $processor = new Processor();
-        $config = $processor->processConfiguration(new DoctrineKeyValueConfiguration(), array(array('key_value' => array('mapping' => array('paths' => array(__DIR__))))));
+        $config = $processor->processConfiguration(new DoctrineKeyValueConfiguration(), array());
 
         $this->assertEquals(
             array(
-                'key_value' => array(
-                    'cache_driver' => 'default',
-                    'mapping' => array('paths' => array(__DIR__)),
-                )
+                'cache_driver' => 'default'
             ),
             $config
         );

@@ -22,7 +22,7 @@ class DoctrineKeyValueConfiguration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('doctrine');
+        $rootNode = $treeBuilder->root('doctrine_key_value');
 
         $rootNode
             ->children()
